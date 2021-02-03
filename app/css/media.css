@@ -1,0 +1,5 @@
+@media (max-width: 767px) {
+   #subscribe-screen input[type="text"] {
+      border-bottom: none;
+   }
+}

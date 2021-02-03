@@ -1,0 +1,513 @@
+@mixin triangle($size, $color, $direction) {
+   height: 0;
+   width: 0;
+   $width: nth($size, 1);
+   $height: nth($size, length($size));
+   $foreground-color: nth($color, 1);
+   $background-color: transparent !default;
+   @if (length($color) == 2) {
+      $background-color: nth($color, 2);
+   }
+   @if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
+      $width: $width / 2;
+      @if $direction == up {
+         border-left: $width solid $background-color;
+         border-right: $width solid $background-color;
+         border-bottom: $height solid $foreground-color;
+      } @else if $direction == right {
+         border-top: $width solid $background-color;
+         border-bottom: $width solid $background-color;
+         border-left: $height solid $foreground-color;
+      } @else if $direction == down {
+         border-left: $width solid $background-color;
+         border-right: $width solid $background-color;
+         border-top: $height solid $foreground-color;
+      } @else if $direction == left {
+         border-top: $width solid $background-color;
+         border-bottom: $width solid $background-color;
+         border-right: $height solid $foreground-color;
+      }
+   } @else if ($direction == up-right) or ($direction == up-left) {
+      border-top: $height solid $foreground-color;
+
+      @if $direction == up-right {
+         border-left: $width solid $background-color;
+      } @else if $direction == up-left {
+         border-right: $width solid $background-color;
+      }
+   } @else if ($direction == down-right) or ($direction == down-left) {
+      border-bottom: $height solid $foreground-color;
+
+      @if $direction == down-right {
+         border-left: $width solid $background-color;
+      } @else if $direction == down-left {
+         border-right: $width solid $background-color;
+      }
+   } @else if ($direction == inset-up) {
+      border-width: $height $width;
+      border-style: solid;
+      border-color: $background-color $background-color $foreground-color;
+   } @else if ($direction == inset-down) {
+      border-width: $height $width;
+      border-style: solid;
+      border-color: $foreground-color $background-color $background-color;
+   } @else if ($direction == inset-right) {
+      border-width: $width $height;
+      border-style: solid;
+      border-color: $background-color $background-color $background-color $foreground-color;
+   } @else if ($direction == inset-left) {
+      border-width: $width $height;
+      border-style: solid;
+      border-color: $background-color $foreground-color $background-color $background-color;
+   }
+}
+[class^="ribbon"] {
+   position: relative;
+   &:before,
+   &:after {
+      content: "";
+      position: absolute;
+   }
+}
+a {
+   transition: 0.2s;
+}
+.lh-1 {
+   line-height: 1;
+}
+ul,
+li {
+   list-style: none;
+}
+.light-weight {
+   font-weight: 300;
+}
+.regular-weight {
+   font-weight: 400;
+}
+.semi-bold-weight {
+   font-weight: 600;
+}
+.bold-weight {
+   font-weight: 700;
+}
+.black-weight {
+   font-weight: 900;
+}
+.font-Rubik {
+   font-family: "Rubik", sans-serif;
+}
+.font-Kanit {
+   font-family: "Kanit", sans-serif;
+}
+.font-DoHyeon {
+   font-family: "Do Hyeon", sans-serif;
+}
+
+nav a {
+   color: #e5e2e2;
+   text-align: center;
+   font-size: 14px;
+   font-style: italic;
+   line-height: 30px;
+   text-decoration: none;
+   border: 2px solid transparent;
+   padding: 5px 10px 5px 10px;
+   transition: all 0.5s;
+   &:hover {
+      color: white;
+      text-decoration: none;
+      border: 2px solid rgb(238, 88, 58);
+   }
+   &:focus {
+      outline: none;
+   }
+}
+.modal__title {
+   color: black;
+   letter-spacing: 1px;
+}
+.modal-header h5 {
+   font-size: 1.75rem;
+}
+.modal-body {
+   form {
+      height: 100%;
+      place-content: center space-between;
+      input {
+         background-color: transparent;
+         color: black;
+         line-height: 30px;
+         text-align: center;
+         font-size: 14px;
+         letter-spacing: 1px;
+         border: 2px solid black;
+      }
+   }
+}
+.modal__select {
+   border: 2px solid black;
+   min-width: 190px;
+}
+.modal__radio {
+   input[type="radio"] {
+      display: none;
+   }
+   input[type="radio"]:checked + label:before {
+      content: "\2022";
+      color: #f3f3f3;
+      font-size: 30px;
+      text-align: center;
+      line-height: 12px;
+   }
+   label {
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+   }
+   label:before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+      position: absolute;
+      left: 0;
+      bottom: 4px;
+      background-color: #aaa;
+      box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.3), 0px 1px 0px 0px rgba(255, 255, 255, 0.8);
+   }
+}
+.modal__radio label:before {
+   border-radius: 50%;
+}
+
+.modalText {
+   color: black;
+}
+#first-screen {
+   height: 100vh;
+   background: url("../img/background.jpg") no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+
+   max-height: 100vh;
+}
+.description {
+   background-color: rgba(#262626, 0.7);
+}
+.title__container {
+   background-color: rgba(#262626, 0.7);
+   color: white;
+}
+.title__containerButton {
+   background-color: transparent;
+   color: rgb(238, 88, 58);
+   transition: 0.7s ease-in-out;
+   font-size: 24px;
+   border-style: ridge;
+   border: 3px solid rgb(238, 88, 58);
+   &:hover {
+      background-color: rgb(238, 88, 58);
+      color: white;
+   }
+}
+
+.modal__btn {
+   background-color: transparent;
+   color: rgb(238, 88, 58);
+   transition: 0.7s ease-in-out;
+   font-size: 16px;
+   border-style: ridge;
+   border: 3px solid rgb(238, 88, 58);
+   &:hover {
+      background-color: rgb(238, 88, 58);
+      color: white;
+      border-color: transparent;
+   }
+}
+
+.title__container h1 {
+   font-size: calc(6vh + 18.2px);
+}
+.descriptionText {
+   color: white;
+   text-align: center;
+   font-family: "Rubik", sans-serif;
+   font-weight: 300;
+   font-size: 20px;
+   font-style: italic;
+   line-height: 30px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.statistics p {
+   font-size: 16px;
+   color: rgb(128, 128, 128);
+}
+.count {
+   font-size: 18px;
+}
+#articles-screen h2,
+#statistics-screen h2 {
+   font-size: calc(6vh + 18.2px);
+}
+#articles-screen {
+   -webkit-box-shadow: 0px 10px 10px 0px rgba(50, 50, 50, 0.5);
+   -moz-box-shadow: 0px 10px 10px 0px rgba(50, 50, 50, 0.5);
+   box-shadow: 0px 10px 10px 0px rgba(50, 50, 50, 1);
+   position: relative;
+   z-index: 100;
+}
+.article {
+   -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.51);
+   -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.51);
+   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.51);
+   border-radius: 10px;
+   h5 {
+      font-size: 16px;
+      line-height: 1;
+   }
+   h3 {
+      line-height: 1;
+   }
+   footer {
+      background-color: #d6d1d1;
+   }
+}
+.title__wrapper {
+   border-bottom: 2px solid rgb(238, 88, 58);
+}
+#articles-screen {
+   footer {
+      .border__bottom {
+         letter-spacing: 1px;
+         text-decoration: none;
+         color: black;
+         border-bottom: dotted 2px black;
+      }
+   }
+}
+#articles-screen {
+   footer {
+      a:hover {
+         letter-spacing: 1px;
+         color: rgb(238, 88, 58);
+      }
+   }
+}
+.article p {
+   font-size: 18px;
+   font-family: "Rubik", sans-serif;
+   font-weight: 400;
+}
+.article__category {
+   border-right: 2px solid #a8a6a6;
+}
+#articles-screen {
+   .article__category {
+      a {
+         border-bottom: none;
+      }
+   }
+}
+.article__category a {
+   letter-spacing: 1px;
+   text-decoration: none;
+   color: black;
+}
+.ribbon {
+   width: 64px;
+   height: 55px;
+   background: #ee583a;
+   top: -22px;
+   left: -30px;
+   &:before {
+      @include triangle(6px, darken(#ee583a, 15%), down-left);
+      right: -6px;
+   }
+   &:after {
+      @include triangle(64px 32px, transparent #ee583a, up);
+      bottom: -29px;
+      right: 0;
+   }
+}
+.ribbon__favorite:before {
+   content: "\e9d7";
+   font-family: "icomoon";
+   position: absolute;
+   font-size: 26px;
+   left: 17px;
+   top: 10px;
+   color: white;
+}
+#subscribe-screen {
+   background: rgb(34, 130, 139);
+   background: linear-gradient(
+      90deg,
+      rgba(34, 130, 139, 0.8659664549413515) 7%,
+      rgba(33, 77, 140, 0.8435574913559174) 33%,
+      rgba(51, 99, 148, 1) 75%,
+      rgba(26, 162, 94, 1) 100%
+   );
+
+   input[type="text"] {
+      background-color: transparent;
+      color: rgb(255, 245, 245);
+      border-color: white;
+      border-style: double;
+      line-height: 40px;
+      text-align: center;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      font-size: calc(2vh + 9px);
+      text-shadow: 2px 0px 4px black;
+      letter-spacing: 1px;
+   }
+}
+.cells {
+   background-image: linear-gradient(rgba(255, 255, 255, 0.5) 2px, transparent 2px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.5) 2px, transparent 2px),
+      linear-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.28) 1px, transparent 1px);
+   background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+.subscribe__form {
+   color: rgb(255, 242, 242);
+   letter-spacing: 1px;
+}
+.round__input {
+   border: 3px solid white;
+   border-style: ridge;
+   max-width: 600px;
+   background-color: rgba(#ffffff, 0.5);
+}
+.imgHover {
+   -webkit-filter: grayscale(100%);
+   filter: grayscale(100%);
+   -webkit-transition: 0.1s ease-in;
+   transition: 0.1s ease-in;
+   cursor: pointer;
+   &:hover {
+      -webkit-filter: grayscale(0);
+      filter: grayscale(0);
+      transform: scale(1.1);
+   }
+}
+.gallery__info {
+   font-size: 18px;
+   line-height: 1;
+   font-style: italic;
+   color: gray;
+}
+#photogallery-screen {
+   -webkit-box-shadow: 0px -10px 10px 0px rgba(50, 50, 50, 0.5);
+   -moz-box-shadow: 0px -10px 10px 0px rgba(50, 50, 50, 0.5);
+   box-shadow: 0px -10px 10px 0px rgba(50, 50, 50, 1);
+   position: relative;
+   z-index: 100;
+   img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+   }
+}
+
+.darkForest {
+   margin-top: -50px;
+}
+.footer__bg {
+   background: black;
+}
+#footer {
+   color: rgb(255, 245, 245);
+   letter-spacing: 1px;
+   a {
+      color: #fff5f5;
+      &:hover {
+         color: rgb(238, 88, 58);
+         text-decoration: none;
+      }
+   }
+}
+.separator {
+   border-bottom: 2px solid #ee583a;
+}
+.subscribe {
+   background-color: transparent;
+   border: 3px solid white;
+   border-style: ridge;
+   background-color: rgba(255, 255, 255, 0.5);
+   transition: 0.7s ease-in-out;
+   &:hover {
+      background-color: rgb(238, 88, 58);
+      color: white;
+   }
+}
+
+.button__text {
+   letter-spacing: 1px;
+   font-size: calc(2vh + 9px);
+   color: rgb(255, 245, 245);
+   text-shadow: 2px 0px 4px black;
+}
+.burger__menu:before {
+   font-family: "icomoon";
+   content: "\e9bd";
+   color: white;
+   font-size: 40px;
+}
+.burger__menu,
+.burger__menu:active,
+.burger__menu:focus {
+   background-color: transparent;
+   border: none;
+   outline: none;
+}
+button,
+button:active,
+button:focus {
+   outline: none;
+}
+.modal-open {
+   overflow: auto;
+   padding-right: 0 !important;
+}
+
+.cover {
+   background: url("../img/background.jpg") no-repeat fixed left center #ffffff;
+   -o-background-size: cover;
+   -moz-background-size: cover;
+   -webkit-background-size: cover;
+   background-size: cover;
+   max-height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+   .cover {
+      background-attachment: scroll;
+      -o-background-size: auto 100%;
+      -moz-background-size: auto 100%;
+      -webkit-background-size: auto 100%;
+      background-size: auto 100%;
+   }
+}
+
+.fixed-header {
+   position: fixed;
+   z-index: 9999;
+   transition: 0.7s;
+   img {
+      display: block;
+      width: 100%;
+      height: auto;
+   }
+}
+
+.header {
+   background-color: rgba(38, 38, 38, 0.7);
+}

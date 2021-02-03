@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   <title>WildWeather</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+   <link rel="stylesheet" href="css/normalize.css">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link
+      href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Kanit:wght@400;600;700;900&family=Rubik:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet">
+   <link rel="stylesheet" href="css/animate.css">
+   <link rel="stylesheet" href="css/fonts.css">
+   <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+   <link rel="stylesheet" href="css/style.min.css">
+   <link rel="stylesheet" href="css/media.css">
+
+</head>
+
+<body>
+   <section id="first-screen" class="cover">
+      <div class="position-relative d-flex flex-column justify-content-between h-100">
+         <div class="container-fluid p-0 header">
+            <header>
+               <div class="container-fluid container-lg">
+                  <nav class="d-flex flex-row justify-content-between font-Rubik light-weight">
+                     <div class="header__logo">
+                        <img src="https://via.placeholder.com/72x72" alt="">
+                     </div>
+                     <!--    <div class="d-flex d-md-none col-10 justify-content-end ">
+                           <button class="burger__menu">
+                           </button>
+                        </div>-->
+                     <div class="header__nav w-100 px-0">
+                        <div class="d-flex justify-content-end d-md-none"><button class="burger__menu"
+                              id="burgerButton">
+                           </button> </div>
+                        <ul class="d-md-flex flex-md-row flex-column justify-content-around text-right align-items-end align-items-md-center h-100 d-none"
+                           id="navLinks">
+                           <li><a href="#first-screen" class="scroll-to">Home</a></li>
+                           <li><a href="#statistics-screen" class="scroll-to">Articles</a></li>
+                           <li><a href="#subscribe-screen" class="scroll-to">Subscribe</a></li>
+                           <li><a href="#photogallery-screen" class="scroll-to">Reviews</a></li>
+                           <li><a href="#" data-toggle="modal" data-target="#exampleModal1">Contact
+                                 us</a>
+                           </li>
+                           <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"
+                              aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered">
+                                 <div class="modal-content">
+                                    <div class="modal-header">
+                                       <h5 class="modal-title modal__title bold-weight font-DoHyeon"
+                                          id="exampleModalLabel">Our contacts</h5>
+                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                       </button>
+                                    </div>
+                                    <div
+                                       class="modal-body semi-bold-weight font-Kanit d-flex flex-column align-items-center">
+                                       <span>E-mail: order.ua@gmail.com</span>
+                                       <span>Call: +38 044 537-02-22</span>
+                                       <span>Showroom shop:</span>
+                                       <div class="d-flex align-items-center w-100">
+                                          <script type=" text/javascript" charset="utf-8" async
+                                             src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A035522858447570cc943c61ac1be6bac30b6b940a613811cd58e1ee08567d614&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true">
+                                             </script>
+                                       </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                       <button type="button" class="btn btn-secondary"
+                                          data-dismiss="modal">Close</button>
+
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </ul>
+                     </div>
+                  </nav>
+               </div>
+            </header>
+         </div>
+         <div class="text-center title__container py-3 wow fadeIn ">
+            <h1 class="bold-weight font-DoHyeon m-0 "> Wild weather </h1>
+            <!-- Button trigger modal -->
+            <button type="button" class=" title__containerButton bold-weight font-DoHyeon" data-toggle="modal"
+               data-target="#exampleModal">
+               Summon it!
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+               aria-hidden="true">
+               <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <h5 class="modal-title modal__title bold-weight font-DoHyeon" id=" exampleModalLabel">Info Form
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                        </button>
+                     </div>
+                     <div class="modal-body">
+                        <form class="d-flex flex-column align-items-center" name=" modalCard" id="formMain">
+                           <label for="requesttext" class="m-0"> <span class="font-Rubik bold-weight modalText">
+                                 Login</span>
+                           </label>
+                           <input id="requesttext" type="text" name="login" placeholder="Your name"
+                              class="font-Rubik regular-weight">
+                           <label for="requestemail" class="m-0"> <span class="font-Rubik bold-weight modalText"> Mail
+                              </span>
+                           </label>
+                           <input id="requestemail" type="email" name="email" placeholder="Your е-mail"
+                              class="font-Rubik regular-weight">
+                           <label for="requesttel" class="m-0"> <span class="font-Rubik bold-weight modalText ">
+                                 Telephone
+                              </span> </label>
+                           <input id="requesttel" type="tel" name="tel" placeholder="Your telephone"
+                              class="font-Rubik regular-weight mb-2">
+                           <select name="age" id="age"
+                              class="font-Rubik bold-weight modalText modal__select mt-3 text-center">
+                              <option disabled selected value="0">Your age</option>
+                              <option value="18-25"> <span>
+                                    18 - 25</span></option>
+                              <option value="25-33"><span>
+                                    25 - 33</span></option>
+                              <option value="33+"><span>
+                                    33 +</span> </option>
+                           </select>
+                           <div class="d-flex flex-row align-items-center modal__radio mt-3">
+                              <input id="radiobox1" name="weather" type="radio" value="storm">
+                              <label for="radiobox1" class="mb-0 pl-3 mr-2"> <span
+                                    class="font-Rubik bold-weight modalText">
+                                    Storm</span> </label>
+                              <input id="radiobox2" name="weather" type="radio" value="snow">
+                              <label for="radiobox2" class="mb-0 pl-3 mr-2"><span
+                                    class="font-Rubik bold-weight modalText">
+                                    Snow</span></label>
+                              <input id="radiobox3" name="weather" type="radio" value="twister">
+                              <label for="radiobox3" class="mb-0 pl-3 mr-2"> <span
+                                    class="font-Rubik bold-weight modalText">
+                                    Twister</span> </label>
+                           </div>
+                        </form>
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="bold-weight font-DoHyeon modal__btn" data-dismiss="modal"
+                           id="send">
+                           Save
+                           changes</button>
+                        <button type="button" class="bold-weight font-DoHyeon modal__btn"
+                           data-dismiss="modal">Close</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="description  container-fluid">
+            <div class="container descriptionText pt-4">
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Error obcaecati recusandae culpa temporibus impedit
+                  quod corrupti possimus natus exercitationem? Optio vel earum eligendi tempore unde nesciunt magnam
+                  laudantium nulla consectetur?
+               </p>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="statistics-screen" class="wow fadeInUp">
+      <div class="container">
+         <div class="title pt-5">
+            <h2 class="black-weight font-Kanit">
+               Milestones
+            </h2>
+         </div>
+         <div class="row statistics">
+            <div
+               class="col-lg-4 d-flex flex-column flex-md-row justify-content-around align-items-center mb-2 mb-lg-0 pl-0">
+               <div class="col-6 col-sm-4 col-md-3 col-lg-5 p-0">
+                  <img src="https://via.placeholder.com/1000x1000" alt="" class="rounded-circle w-100">
+               </div>
+               <div class="pl-3 text-center text-md-left">
+                  <div
+                     class="d-flex flex-row align-items-start mb-2 title__wrapper justify-content-md-start justify-content-center">
+                     <h5 class="bold-weight Kanit m-0 ">
+                        Reliability
+                     </h5>
+                     <span class="count semi-bold-weight font-Kanit pl-2">
+                        10000</span>
+                  </div>
+                  <p class="mb-0 regular-weight font-Rubik lh-1">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+               </div>
+            </div>
+            <div
+               class="col-lg-4 d-flex flex-column flex-md-row justify-content-around align-items-center mb-2 mb-lg-0 pl-0">
+               <div class="col-6 col-sm-4 col-md-3 col-lg-5 p-0">
+                  <img src="https://via.placeholder.com/1000x1000" alt="" class="rounded-circle w-100">
+               </div>
+               <div class="pl-3 text-center text-md-left">
+                  <div
+                     class="d-flex flex-row align-items-start mb-2 title__wrapper justify-content-md-start justify-content-center">
+                     <h5 class="bold-weight Kanit m-0">
+                        Reliability
+                     </h5>
+                     <span class="count semi-bold-weight font-Kanit pl-2">
+                        10000</span>
+                  </div>
+                  <p class="mb-0 regular-weight font-Rubik lh-1">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+               </div>
+            </div>
+            <div
+               class="col-lg-4 d-flex flex-column flex-md-row justify-content-around align-items-center mb-2 mb-lg-0 pl-0">
+               <div class="col-6 col-sm-4 col-md-3 col-lg-5 p-0">
+                  <img src="https://via.placeholder.com/1000x1000" alt="" class="rounded-circle w-100">
+               </div>
+               <div class="pl-3 text-center text-md-left">
+                  <div
+                     class="d-flex flex-row align-items-start mb-2 title__wrapper justify-content-md-start justify-content-center">
+                     <h5 class="bold-weight Kanit m-0 ">
+                        Reliability
+                     </h5>
+                     <span class="count semi-bold-weight font-Kanit pl-2">
+                        10000</span>
+                  </div>
+                  <p class="mb-0 regular-weight font-Rubik lh-1">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+   </section>
+   <section id="articles-screen" class="mt-3  pb-5">
+      <div class="container">
+         <div class="title pt-5">
+            <h2 class="black-weight font-Kanit wow fadeInUp">
+               News
+            </h2>
+         </div>
+         <div class="row d-flex align-items-start justify-content-between">
+            <div class="col-lg-8 pb-0 ">
+               <article class="latest__article article mb-4 mb-lg-0 wow fadeInUp">
+                  <header class="pt-3 px-2 d-flex flex-row justify-content-between">
+                     <div class="article__title d-flex flex-column justify-content-between">
+                        <h3 class="bold-weight font-DoHyeon mb-0">This is article</h3>
+                        <h5 class="semi-bold-weight font-Kanit ">02.dec.2020</h5>
+                     </div>
+                     <div class="article__bookmark">
+                        <div class="ribbon">
+                           <div class="ribbon__favorite">
+
+                           </div>
+                        </div>
+                     </div>
+                  </header>
+                  <div class="p-2 ">
+                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet magnam soluta vitae quia nesciunt
+                        doloribus. Ad aut eius, temporibus tempore ipsum minus eveniet laboriosam voluptatibus. Animi
+                        praesentium exercitationem nisi dolor!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis amet dicta, iusto excepturi
+                        tenetur
+                        sint omnis aliquid dolores sequi dolor aspernatur adipisci, facilis commodi dolore aut in
+                        corrupti
+                        voluptas magnam?</p>
+                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit eius aliquam consectetur sequi
+                        perferendis aut dolore, blanditiis, dolorem, natus et ipsa! Ipsam soluta fugit praesentium.
+                        Exercitationem repellendus quibusdam mollitia accusamus?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa cum et quis alias rem fugit eum
+                        tenetur
+                        voluptatibus, iure repellat perspiciatis sint facere unde, possimus pariatur voluptatum,
+                        necessitatibus ex. Vitae?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur qui, similique voluptates
+                        quidem
+                        nulla ex atque cumque ipsum blanditiis? Quae itaque quis libero, modi molestias excepturi amet
+                        ducimus
+                        eligendi! Repudiandae.</p>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit expedita quisquam aperiam,
+                        obcaecati quis cupiditate amet quos esse quas, voluptatum reprehenderit? Magni tempore placeat,
+                        rem
+                        deserunt perferendis illo quas at.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit expedita quisquam aperiam,
+                        obcaecati quis cupiditate
+                        amet quos esse quas, voluptatum reprehenderit? Magni tempore placeat, rem deserunt perferendis
+                        illo
+                        quas at.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit expedita quisquam aperiam,
+                        obcaecati quis cupiditate
+                        amet quos esse quas, voluptatum reprehenderit? Magni tempore placeat, rem deserunt perferendis
+                        illo
+                        quas at.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit expedita quisquam aperiam,
+                        obcaecati quis cupiditate
+                        amet quos esse quas, voluptatum reprehenderit? Magni tempore placeat, rem deserunt perferendis
+                        illo
+                        quas at.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit expedita quisquam aperiam,
+                        obcaecati quis cupiditate
+                        amet quos esse quas, voluptatum reprehenderit? Magni tempore placeat, rem deserunt perferendis
+                        illo
+                        quas at.
+                     </p>
+                     <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit expedita quisquam aperiam,
+                        obcaecati quis cupiditate
+                        amet quos esse quas, voluptatum reprehenderit? Magni tempore placeat, rem deserunt perferendis
+                        illo
+                        quas at.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit expedita quisquam aperiam,
+                        obcaecati quis cupiditate
+                        amet quos esse quas, voluptatum reprehenderit? Magni tempore placeat, rem deserunt perferendis
+                        illo
+                        quas at.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit expedita quisquam aperiam,
+                        obcaecati quis cupiditate
+                        amet quos esse quas, voluptatum reprehenderit? Magni tempore placeat, rem deserunt perferendis
+                        illo
+                        quas at.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit expedita quisquam aperiam,
+                        obcaecati quis cupiditate
+                        amet quos esse quas, voluptatum reprehenderit? Magni tempore placeat, rem deserunt perferendis
+                        illo
+                        quas at.
+                     </p>
+
+                  </div>
+                  <footer class="py-1 d-flex flex-sm-row justify-content-between px-4 flex-column">
+                     <div class="article__metadata d-flex justify-content-center align-items-center">
+                        <span class="article__category pr-3 semi-bold-weight font-Kanit "><a href="#" class="">Science
+                           </a></span>
+                        <img src="../icons/eye.png" class="pl-3 " alt="" width="auto" height="18px">
+                        <span class="pl-1 semi-bold-weight font-Kani"> 1 569 </span>
+                     </div>
+                     <div class=" article__author text-center text-sm-right">
+                        <span class="m-0 semi-bold-weight font-Kanit">author:</span> <span
+                           class="semi-bold-weight font-Kanit"><a href="#" class="border__bottom"> Lorem
+                              Ipsum</a>
+                        </span>
+                     </div>
+                  </footer>
+            </div>
+            </article>
+
+            <div class="col-lg-4 d-flex flex-column align-items-center justify-content-around ">
+               <article class="article article_card mb-4 wow fadeInUp" data-wow-delay=".3s">
+                  <header class="pt-3 px-2">
+                     <h3 class="bold-weight font-DoHyeon mb-0">This is article</h3>
+                     <h5 class="semi-bold-weight font-Kanit ">02.dec.2020</h5>
+                  </header>
+                  <div class="p-2">
+                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet magnam soluta vitae quia
+                        nesciunt
+                        doloribus. Ad aut eius, temporibus tempore ipsum minus eveniet laboriosam voluptatibus. Animi
+                        praesentium exercitationem nisi dolor!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis amet dicta, iusto excepturi
+                        tenetur
+                        sint omnis aliquid dolores sequi dolor aspernatur adipisci, facilis commodi dolore aut in
+                        corrupti
+                        voluptas magnam?</p>
+
+                  </div>
+                  <footer class="py-1 d-flex flex-row justify-content-between px-4">
+                     <div class="article__metadata">
+                        <img src="../icons/eye.png" alt="" width="auto" height="18px">
+                        <span class="pl-1 semi-bold-weight font-Kanit"> 1 569 </span>
+                     </div>
+                     <div class=" article__author text-right">
+                        <span class="m-0 semi-bold-weight font-Kanit">author:</span> <span
+                           class="semi-bold-weight font-Kanit"><a href="#" class="border__bottom">
+                              Lorem
+                              Ipsum</a>
+                        </span>
+                     </div>
+                  </footer>
+               </article>
+
+
+               <article class="article article_card mb-4 wow fadeInUp" data-wow-delay=".4s">
+                  <header class="pt-3 px-2">
+                     <h3 class="bold-weight font-DoHyeon mb-0">This is article</h3>
+                     <h5 class="semi-bold-weight font-Kanit ">02.dec.2020</h5>
+                  </header>
+                  <div class="p-2">
+                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet magnam soluta vitae quia
+                        nesciunt
+                        doloribus. Ad aut eius, temporibus tempore ipsum minus eveniet laboriosam voluptatibus. Animi
+                        praesentium exercitationem nisi dolor!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis amet dicta, iusto excepturi
+                        tenetur
+                        sint omnis aliquid dolores sequi dolor aspernatur adipisci, facilis commodi dolore aut in
+                        corrupti
+                        voluptas magnam?</p>
+                  </div>
+                  <footer class="py-1 d-flex flex-row justify-content-between px-4">
+                     <div class="article__metadata">
+                        <img src="../icons/eye.png" alt="" width="auto" height="18px">
+                        <span class="pl-1 semi-bold-weight font-Kanit"> 1 569 </span>
+                     </div>
+                     <div class=" article__author text-right">
+                        <span class="m-0 semi-bold-weight font-Kanit">author:</span> <span
+                           class="semi-bold-weight font-Kanit"><a href="#" class="border__bottom">
+                              Lorem
+                              Ipsum</a>
+                        </span>
+                     </div>
+                  </footer>
+               </article>
+
+               <article class="article article_card wow fadeInUp" data-wow-delay=".4s">
+                  <header class="pt-3 px-2">
+                     <h3 class="bold-weight font-DoHyeon mb-0">This is article</h3>
+                     <h5 class="semi-bold-weight font-Kanit ">02.dec.2020</h5>
+                  </header>
+                  <div class="p-2">
+                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet magnam soluta vitae quia
+                        nesciunt
+                        doloribus. Ad aut eius, temporibus tempore ipsum minus eveniet laboriosam voluptatibus. Animi
+                        praesentium exercitationem nisi dolor!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis amet dicta, iusto excepturi
+                        tenetur
+                        sint omnis aliquid dolores sequi dolor aspernatur adipisci, facilis commodi dolore aut in
+                        corrupti
+                        voluptas magnam?</p>
+                  </div>
+                  <footer class="py-1 d-flex flex-row justify-content-between px-4">
+                     <div class="article__metadata">
+                        <img src="../icons/eye.png" alt="" width="auto" height="18px">
+                        <span class="pl-1 semi-bold-weight font-Kanit"> 1 569 </span>
+                     </div>
+                     <div class=" article__author text-right">
+                        <span class="m-0 semi-bold-weight font-Kanit">author:</span> <span
+                           class="semi-bold-weight font-Kanit"><a href="#" class="border__bottom">
+                              Lorem
+                              Ipsum</a>
+                        </span>
+                     </div>
+                  </footer>
+               </article>
+            </div>
+
+         </div>
+      </div>
+
+   </section>
+   <section id="subscribe-screen">
+      <div class="container-fluid cells py-5">
+         <div class="subscribe__form text-center d-flex flex-column justify-content-between align-items-center">
+            <h2 class="bold-weight font-DoHyeon wow fadeInDown"> Subscribe title </h2>
+            <label for="email">
+               <p class="font-Rubik regular-weight wow fadeInDown"> Lorem ipsum, dolor sit amet consectetur adipisicing
+                  elit.
+                  Voluptatibus et,
+                  quisquam laborum dolorum
+                  vel
+                  quo perferendis necessitatibus aperiam quod tenetur quae quasi, praesentium sequi ipsum architecto,
+                  quis
+                  ullam dicta saepe? </p>
+            </label>
+            <form action=""
+               class="d-flex flex-column flex-md-row   col-lg-8 col-12 align-items-center justify-content-center">
+               <div class="round__input rounded-pill py-md-3 w-100 px-md-5 mb-3 mb-md-0 wow fadeInLeft">
+                  <input id="email" type="text" name="mail" placeholder="example@email.com"
+                     class="font-Rubik regular-weight  w-100">
+               </div>
+               <button class="subscribe ml-md-5 ml-0 rounded-pill p-2 p-md-4 wow fadeInRight">
+                  <span class="font-Rubik bold-weight button__text"> Subscribe </span>
+               </button>
+            </form>
+         </div>
+      </div>
+   </section>
+   <section id="photogallery-screen">
+      <div class="container">
+         <div class="title pt-5 wow fadeInUp">
+            <h2 class="black-weight font-Kanit mb-0 ">
+               Photo gallery
+            </h2>
+            <h5 class="bold-weight font-DoHyeon pb-3">
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </h5>
+         </div>
+         <!--
+         <div class="row justify-content-around align-items-center p-5">
+            <a data-fancybox="gallery" href="img/test.jpg">
+               <img src="img/test.jpg" alt="" class="  p-0 imgHover col-lg-2 col-md-5  mb-3  p-lg-0 wow fadeInRight"
+                  data-wow-delay=".1s">
+               <a>
+                  <a data-fancybox="gallery" href="img/test.jpg">
+                     <img src="img/test.jpg" alt=""
+                        class="  p-0 imgHover col-lg-2 col-md-5  mb-3  p-lg-0 wow fadeInRight" data-wow-delay=".2s">
+                  </a>
+                  <a data-fancybox="gallery" href="img/test.jpg">
+                     <img src="img/test.jpg" alt=""
+                        class="  p-0 imgHover col-lg-2 col-md-5  mb-3  p-lg-0 wow fadeInRight" data-wow-delay=".3s">
+                  </a>
+                  <a data-fancybox="gallery" href="img/test.jpg">
+                     <img src="img/test.jpg" alt=""
+                        class=" p-0 imgHover col-lg-2 col-md-5  mb-3  p-lg-0 wow fadeInRight" data-wow-delay=".4s">
+                  </a>
+                  <a data-fancybox="gallery" href="img/test.jpg">
+                     <img src="img/test.jpg" alt="" class=" p-0 imgHover col-lg-2 col-md-5 mb-3  p-lg-0 wow fadeInRight"
+                        data-wow-delay=".5s">
+                  </a>
+         </div>
+-->
+
+         <div class="row justify-content-between">
+            <div class=" col-lg-3 col-md-5 mb-3">
+               <a data-fancybox="gallery" href="img/choose-your-way.jpg">
+                  <img class="img-fluid imgHover wow fadeInRight" src="img/choose-your-way.jpg" alt="...">
+               </a>
+            </div>
+            <div class="col-lg-3 col-md-5 mb-3">
+               <a data-fancybox="gallery" href="img/cloud-in-the-sky.jpg">
+                  <img class="img-fluid imgHover wow fadeInRight" src="img/cloud-in-the-sky.jpg" alt="...">
+               </a>
+            </div>
+            <div class="col-lg-3 col-md-5 mb-3">
+               <a data-fancybox="gallery" href="img/green-grass-and-green-trees.jpg">
+                  <img class="img-fluid imgHover wow fadeInRight" src="img/green-grass-and-green-trees.jpg" alt="...">
+               </a>
+            </div>
+            <div class="col-lg-3 col-md-5 mb-3">
+               <a data-fancybox="gallery" href="img/test.jpg">
+                  <img class="img-fluid imgHover wow fadeInRight" src="img/test.jpg" alt="...">
+               </a>
+            </div>
+
+         </div>
+
+         <div class="gallery__info light-weight regular-weight font-Kanit text-center pt-3 mb-5 wow fadeInUp">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste eum tenetur sequi asperiores. Perspiciatis
+               fuga magni alias nam mollitia! Facilis dolore amet nobis temporibus omnis impedit nesciunt dolores
+               assumenda
+               quo.
+            </p>
+         </div>
+         <div class="separator col-lg-8 mx-auto mb-3">
+         </div>
+         <div id="carouselExampleSlidesOnly" class="carousel slide mb-5 mb-md-0" data-ride="carousel">
+            <div class="carousel-inner wow fadeInUp">
+               <div class="carousel-item active" data-interval="2500">
+                  <div class="row">
+                     <div class="offset-sm-2 col-sm-3 col-md-2"><img
+                           src="http://html-plus.in.ua/wp-content/uploads/2019/01/lara.jpg"
+                           class="img-fluid rounded-circle d-block m-auto pb-3" alt=""></div>
+
+                     <div class="offset-md-1 col-md-5 col-sm-5">
+                        <div class=" semi-bold-weight font-Kanit  pb-3">
+                           <h4>Lorem Ipsum</h4>
+                        </div>
+                        <div class="regular-weight font-Kanit">
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nobis quos dolor eos libero.
+                           Enim vel nulla provident quis commodi, eligendi veritatis. Tempora, unde provident voluptatum
+                           tenetur molestias atque deserunt!
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item " data-interval="2500">
+                  <div class="row">
+                     <div class="offset-sm-2 col-sm-3 col-md-2"><img
+                           src="http://html-plus.in.ua/wp-content/uploads/2019/01/lara.jpg"
+                           class="img-fluid rounded-circle d-block m-auto pb-3" alt=""></div>
+
+                     <div class="offset-md-1 col-md-5 col-sm-5">
+                        <div class=" semi-bold-weight font-Kanit  pb-3">
+                           <h4>Lorem Ipsum</h4>
+                        </div>
+                        <div class="regular-weight font-Kanit">
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nobis quos dolor eos libero.
+                           Enim vel nulla provident quis commodi, eligendi veritatis. Tempora, unde provident voluptatum
+                           tenetur molestias atque deserunt!
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item" data-interval="2500">
+                  <div class="row">
+                     <div class="offset-sm-2 col-sm-3 col-md-2"><img
+                           src="http://html-plus.in.ua/wp-content/uploads/2019/01/lara.jpg"
+                           class="img-fluid rounded-circle d-block m-auto pb-3" alt=""></div>
+
+                     <div class="offset-md-1 col-md-5 col-sm-5">
+                        <div class=" semi-bold-weight font-Kanit  pb-3">
+                           <h4>Lorem Ipsum</h4>
+                        </div>
+                        <div class="regular-weight font-Kanit">
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nobis quos dolor eos libero.
+                           Enim vel nulla provident quis commodi, eligendi veritatis. Tempora, unde provident voluptatum
+                           tenetur molestias atque deserunt!
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </div>
+      <div class="darkForest">
+         <img src="img/forest.png" alt="" class="w-100">
+      </div>
+   </section>
+   <footer id="footer">
+      <div class="footer__bg">
+         <div class="container">
+            <div class="row">
+               <div class=" d-flex flex-row justify-content-between align-items-lg-center"></div>
+               <div class="col-lg-3 text-center ">
+                  <img src="https://via.placeholder.com/68x68" alt="">
+               </div>
+               <div class="col-lg-3 text-center">
+                  <span class="font-DoHyeon bold-weight">Showroom shop:</span>
+                  <p class="font-Rubik regular-weight">Mon-Fri from 10:00 to 18:00
+                     Ukraine, Kiev, 01042
+                     Tverskoy Tupik 4
+                  </p>
+               </div>
+               <div class=" col-lg-3 text-center">
+                  <span class="font-DoHyeon bold-weight">Calls:</span>
+                  <p class="font-Rubik regular-weight"><a href="tel:+380445370222">+38 044 537-02-22</a>
+                     <br>
+                     <a href="+380445370222">
+                        +38 044 537-02-22</a>
+                  </p>
+               </div>
+               <div class=" col-lg-3 text-center">
+                  <span class="font-DoHyeon bold-weight">E-mail:</span>
+                  <p class="font-Rubik regular-weight">Retail - <a href="mailto:order.ua@gmail.com"> order.ua@gmail.com
+                     </a>
+                     <br>
+                     wholesale - <a href="mailto:sales@gmail.com "> sales@gmail.com </a>
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </footer>
+   <script src="http://code.jquery.com/jquery-latest.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"></script>
+   <script src="js/jquery.fancybox.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+      integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+      crossorigin="anonymous"></script>
+   <script src="js/wow.min.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="js/libs.min.js"> </script>
+   <script src="js/main.js"> </script>
+</body>
+
+</html>
